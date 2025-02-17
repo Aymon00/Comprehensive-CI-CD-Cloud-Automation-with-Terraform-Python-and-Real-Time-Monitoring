@@ -1,0 +1,4 @@
+1- ssh -i ~/.ssh/MyKey ubuntu@"Jenkins_server_public_ip"
+2- curl http://"jenkins_public_ip"/latest/user-data    # to see the user data on the instance
+3- http://"Jenkins_server_public_ip":8080
+4- sudo cat /var/lib/jenkins/secrets/initialAdminPassword   # to get the password from the Jenkins Server
