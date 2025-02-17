@@ -8,6 +8,6 @@ bucket_name = 'dolfinedbucket12345'
 # new_bucket = s3_cli.create_bucket(Bucket=bucket_name,CreateBucketConfiguration={'LocationConstraint': 'us-east-2'})
 # pprint(new_bucket)
 
-'''delete  bucket using client object'''
-response = s3_cli.delete_bucket(Bucket=bucket_name)
-print("successfully deleted the bucket")
+#'''delete  bucket using client object'''
+#response = s3_cli.delete_bucket(Bucket=bucket_name)
+#print("successfully deleted the bucket")
