@@ -56,14 +56,28 @@ Comprehensive-CI-CD-Cloud-Automation/
 ## 🛠️ Technical Implementation
 ### 🏗️ AWS Architecture Stack
 ```mermaid
-graph TD
-    A[GitHub Repository] -->|Code Commit| B[Jenkins Server]
-    B -->|Trigger Build| C[Terraform]
-    C -->|Provision Infrastructure| D[AWS Cloud]
-    D -->|Deploy Application| E[EC2 Instances]
-    E -->|Monitor Performance| F[CloudWatch]
-    F -->|Visualize Metrics| G[Grafana Dashboard]
-    G -->|Alert on Anomalies| H[Email/SMS Notifications]
+    graph TD
+    A[User] -->|Runs| B[Bash Script]
+    A -->|Runs| C[Python Script]
+    A -->|Executes| D[Terraform]
+    
+    B -->|Interacts with| E[AWS Cloud]
+    C -->|Interacts with| E
+    D -->|Deploys Infrastructure| E
+    
+    E -->|Creates| F[VPC]
+    F -->|Contains| G[Subnet ACL]
+    G -->|Applies Rules| H[Security Group]
+    H -->|Protects| I[Amazon EC2]
+    
+    I -->|Uses| J[Docker]
+    I -->|CI/CD| K[Jenkins]
+    I -->|Monitoring| L[DataDog]
+    I -->|Metrics| M[Prometheus]
+    I -->|Visualization| N[Grafana]
+
+    E -->|Public Access| O[Internet Gateway]
+
 
 ```
 ## 🤝 Connect with Me
